@@ -17,7 +17,7 @@ print(thisdict)
 print(thisdict["year"])
 print(len(thisdict))
 print(type(thisdict))
-thisdict = dict(name = "John", age = 36, country = "Norway")
+thisdict = dict(name="John", age=36, country="Norway")
 print(thisdict)
 
 ##############################################################
@@ -26,8 +26,58 @@ print(thisdict)
 thisdict = {
     "brand": "Ford",
     "model": "Mustang",
-    "year": 1964
+    "year": 1964,
+    "color": "Red",
+    "km": 45000,
+    "last": "John Doe",
 }
 x = thisdict["model"]
-
 x = thisdict.get("model")
+x = thisdict.keys()
+print('Chaves:', x)
+x = thisdict.values()
+print('Valores: ', x)
+x = thisdict.items()
+print(x, type(x))
+
+thisdict["color"] = "blue"
+print(thisdict)
+
+if "model" in thisdict:
+    print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+thisdict["year"] = 2018
+print('Atualizar:', thisdict)
+thisdict.update({"year": 2020})
+print('Update:', thisdict)
+thisdict.pop("model")
+print('Remover POP:', thisdict)
+thisdict.popitem()
+print('Remover último item inserido:', thisdict)
+del thisdict["year"]
+print('Remover DEL: ', thisdict)
+
+for keys, values in thisdict.items():
+    print(keys, values)
+
+
+child1 = {
+    "name" : "Emil",
+    "year" : 2004
+}
+child2 = {
+    "name" : "Tobias",
+    "year" : 2007
+}
+child3 = {
+    "name" : "Linus",
+    "year" : 2011
+}
+
+myfamily = {
+    "child1" : child1,
+    "child2" : child2,
+    "child3" : child3
+}
+
+print(myfamily["child2"]["name"])
